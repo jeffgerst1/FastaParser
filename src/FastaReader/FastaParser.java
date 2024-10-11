@@ -99,16 +99,17 @@ public class FastaParser {
     }
 
     public static void main(String[] args) throws Exception {
-        List<FastaSequence> fastaList = FastaParser.readFastaFile("c:\\pointsToSome\\FastaFile.txt");
+        List<FastaSequence> fastaList = FastaParser.readFastaFile("C:\Internship\testfasta.txt");
 
         System.out.println("Raw FASTA Sequences:");
         for (FastaSequence fs : fastaList) {
             System.out.println("Header: " + fs.getHeader());
             System.out.println("Sequence: " + fs.getSequence());
+            System.out.println("GC Ratio: "+ fs.getGCRatio());
             System.out.println(); // Print a blank line for better readability
         }
 
-        File myFile = new File("c:\\yourFilePathHere\\out.txt");
+        File myFile = new File("C:\Internship\out.txt");
 
         FastaParser.writeTableSummary(fastaList, myFile);
     }
